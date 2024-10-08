@@ -24,7 +24,7 @@ const MobileFooter = () => {
             items-center
             bg-white
             boarder-t-[1px]
-            lg-hidden
+            lg:hidden
         "
     >
       {routes.map((route) => (
