@@ -16,9 +16,9 @@ const ConversationList: React.FC<ConversationListProps> = ({
   initialItems,
 }) => {
   const [items, setItems] = useState(initialItems);
-  const router = useRouter;
+  const router = useRouter();
 
-  const { conversationId, isOpen } = useConversation;
+  const { conversationId, isOpen } = useConversation();
 
   return (
     <aside
