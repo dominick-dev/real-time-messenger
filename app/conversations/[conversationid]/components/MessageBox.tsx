@@ -30,7 +30,7 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
   const message = clsx(
     "text-sm w-fit overflow-hidden",
     isOwn && !data.image ? "bg-sky-500 text-white" : "",
-    isOwn && data.image ? "" : "by-gray-100",
+    isOwn && data.image ? "" : "bg-gray-100",
     data.image ? "rounded-md p-0" : "rounded-full py-2 px-3"
   );
 
@@ -58,8 +58,7 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
                         cursor-pointer
                         hover:scale-110
                         transition
-                        translate
-                        
+                        transform
                     "
             />
           ) : (
