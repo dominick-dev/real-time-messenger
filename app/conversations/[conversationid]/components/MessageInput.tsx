@@ -14,9 +14,10 @@ interface MessageInputProps {
 const MessageInput: React.FC<MessageInputProps> = ({
   placeholder,
   id,
-  type,
+  type = "text",
   required,
   register,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   errors,
 }) => {
   return (
