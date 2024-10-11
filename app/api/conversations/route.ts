@@ -95,6 +95,7 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json(newConversation);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return new NextResponse("Internal Error", { status: 500 });
   }

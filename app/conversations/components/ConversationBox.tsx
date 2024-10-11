@@ -5,7 +5,7 @@ import { useCallback, useMemo } from "react";
 import { Conversation, Message, User } from "@prisma/client";
 import { format } from "date-fns";
 import { useSession } from "next-auth/react";
-import { clsx } from "clsx";
+import clsx from "clsx";
 import { FullConversationType } from "@/app/types";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import Avatar from "@/app/components/Avatar";
@@ -69,16 +69,16 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
       onClick={handleClick}
       className={clsx(
         `
-      w-full
-      relative
-      flex
-      items-center
-      space-x-3
-      hover:bg-neutral-100
-      rounded-lg
-      transition
-      cursor-pointer
-      p-3
+        w-full
+        relative
+        flex
+        items-center
+        space-x-3
+        hover:bg-neutral-100
+        rounded-lg
+        transition
+        cursor-pointer
+        p-3
       `,
         selected ? "bg-neutral-100" : "bg-white"
       )}
@@ -92,17 +92,17 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
         <div className="focus:outline-none">
           <div
             className="
-          flex 
-          justify-between 
-          items-center 
-          mb-1
-          "
+              flex 
+              justify-between 
+              items-center 
+              mb-1
+            "
           >
             <p
               className="
-              text-md
-              font-medium
-              text-gray-900
+                text-md
+                font-medium
+                text-gray-900
             "
             >
               {data.name || otherUser.name}
@@ -110,9 +110,9 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
             {lastMessage?.createdAt && (
               <p
                 className="
-                text-xs
-                text-gray-400
-                font-light
+                  text-xs
+                  text-gray-400
+                  font-light
                 "
               >
                 {format(new Date(lastMessage.createdAt), "p")}
