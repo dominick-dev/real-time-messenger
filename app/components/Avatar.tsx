@@ -16,14 +16,14 @@ const Avatar: React.FC<AvatarProps> = ({ user }) => {
     <div className="relative">
       <div
         className="
-        relative
-        inline-block 
-        rounded-full 
-        overflow-hidden 
-        h-6
-        w-6
-        md:h-9
-        md:w-9
+          relative
+          inline-block 
+          rounded-full 
+          overflow-hidden 
+          h-6
+          w-6
+          md:h-9
+          md:w-9
         "
       >
         <Image alt="Avatar" src={user?.image || "/images/profile.png"} fill />

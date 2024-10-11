@@ -8,6 +8,7 @@ const MobileFooter = () => {
   const routes = useRoutes();
   const { isOpen } = useConversation();
 
+  // hide if user has active conversation open
   if (isOpen) {
     return null;
   }

@@ -1,6 +1,7 @@
 import { useParams } from "next/navigation";
 import { useMemo } from "react";
 
+// Extract and manage state related to a conversation
 const useConversation = () => {
   const params = useParams();
 

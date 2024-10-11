@@ -5,6 +5,7 @@ import clsx from "clsx";
 
 interface MobileItemProps {
   href: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
   active?: boolean;
   onClick?: () => void;

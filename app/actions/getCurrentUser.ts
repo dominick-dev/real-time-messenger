@@ -21,6 +21,7 @@ const getCurrentUser = async () => {
     }
 
     return currentUser;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return null;
   }

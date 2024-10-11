@@ -20,6 +20,7 @@ const AuthForm = () => {
   const [variant, setVariant] = useState<Variant>("LOGIN");
   const [isLoading, setIsLoading] = useState(false);
 
+  // useEffect to reroute to users page after successful login
   useEffect(() => {
     if (session?.status === "authenticated") {
       router.push("/users");

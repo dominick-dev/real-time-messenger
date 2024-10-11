@@ -15,8 +15,6 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
   const routes = useRoutes();
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log({ currentUser });
-
   return (
     <>
       <SettingsModal
@@ -53,10 +51,10 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
           <ul
             role="list"
             className="
-                   flex
-                    flex-col
-                    items-center
-                    space-y-1 
+                  flex
+                  flex-col
+                  items-center
+                  space-y-1 
                 "
           >
             {routes.map((item) => (
