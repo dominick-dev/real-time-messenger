@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import ReactSelect from "react-select";
@@ -41,7 +42,7 @@ const Select: React.FC<SelectProps> = ({
           styles={{
             menuPortal: (base) => ({
               ...base,
-              zIndex: 999,
+              zIndex: 9999,
             }),
           }}
           classNames={{

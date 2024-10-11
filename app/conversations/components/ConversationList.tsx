@@ -9,7 +9,6 @@ import { MdOutlineGroupAdd } from "react-icons/md";
 import ConversationBox from "./ConversationBox";
 import GroupChatModal from "./GroupChatModal";
 import { User } from "@prisma/client";
-import Users from "@/app/users/page";
 import { useSession } from "next-auth/react";
 import { pusherClient } from "@/app/libs/pusher";
 import { find } from "lodash";
@@ -83,7 +82,7 @@ const ConversationList: React.FC<ConversationListProps> = ({
       pusherClient.unsubscribe(pusherKey);
       pusherClient.unbind("conversation:new", newHandler);
       pusherClient.unbind("conversation:update", updateHandler);
-      pusherClient.unbind("conversation.remove", removeHandler);
+      pusherClient.unbind("conversation:remove", removeHandler);
     };
   }, [pusherKey, conversationId, router]);
 
