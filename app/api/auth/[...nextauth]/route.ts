@@ -7,6 +7,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 import prisma from "@/app/libs/prismadb";
 
+// Define auth options
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -28,22 +29,22 @@ export const authOptions: AuthOptions = {
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Invalid credentials");
         }
-
+        // search for authorized user in DB
         const user = await prisma.user.findUnique({
           where: {
             email: credentials.email,
           },
         });
-
+        // check that user is not used credentials from social login
         if (!user || !user?.hashedPassword) {
           throw new Error("Invalid credentials");
         }
-
+        // check that user entered correct password
         const isCorrectPassword = await bcrypt.compare(
           credentials.password,
           user.hashedPassword
         );
-
+        // check for incorrect password
         if (!isCorrectPassword) {
           throw new Error("Invalid credentials");
         }
@@ -52,6 +53,7 @@ export const authOptions: AuthOptions = {
       },
     }),
   ],
+  // turn on debug in development only
   debug: process.env.NODE_ENV === "development",
   session: {
     strategy: "jwt",
