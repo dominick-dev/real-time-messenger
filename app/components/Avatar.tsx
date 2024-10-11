@@ -1,8 +1,8 @@
 "use client";
 
+import useActiveList from "../hooks/useActiveList";
 import { User } from "@prisma/client";
 import Image from "next/image";
-import useActiveList from "../hooks/useActiveList";
 
 interface AvatarProps {
   user?: User;
@@ -10,7 +10,8 @@ interface AvatarProps {
 
 const Avatar: React.FC<AvatarProps> = ({ user }) => {
   const { members } = useActiveList();
-  const isActive = members.indexOf(user.email!) !== -1;
+  // const isActive = members.indexOf(user?.email!) !== -1;
+  const isActive = user?.email ? members.includes(user.email) : false;
 
   return (
     <div className="relative">
