@@ -52,6 +52,7 @@ export async function DELETE(
     });
 
     return NextResponse.json(deletedConversation);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     console.log(error, "ERROR_CONVERSATION_DELETE");
     return new NextResponse("Internal Error", { status: 500 });

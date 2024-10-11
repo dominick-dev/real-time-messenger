@@ -63,12 +63,12 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
               width="288"
               src={data.image}
               className="
-                        object-hover
-                        cursor-pointer
-                        hover:scale-110
-                        transition
-                        transform
-                    "
+                  object-cover
+                  cursor-pointer
+                  hover:scale-110
+                  transition
+                  transform
+                "
             />
           ) : (
             <div>{data.body}</div>

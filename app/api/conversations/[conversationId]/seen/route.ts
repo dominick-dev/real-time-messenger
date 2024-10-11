@@ -74,8 +74,9 @@ export async function POST(request: Request, { params }: { params: IParms }) {
     );
 
     return NextResponse.json(updatedMessage);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    console.log("error", "ERROR_MESSAGES_SEEN");
+    console.log(error, "ERROR_MESSAGES_SEEN");
     return new NextResponse("Internal Error", { status: 500 });
   }
 }

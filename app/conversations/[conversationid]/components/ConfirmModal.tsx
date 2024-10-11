@@ -77,7 +77,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({ isOpen, onClose }) => {
           <div className="mt-2">
             <p className="text-sm text-gray-500">
               Are you sure you want to delete this conversation? This cannot be
-              undone
+              undone.
             </p>
           </div>
         </div>

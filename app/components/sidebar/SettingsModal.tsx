@@ -41,6 +41,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
 
   const image = watch("image");
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleUpload = (result: any) => {
     setValue("image", result?.info?.secure_url, {
       shouldValidate: true,
@@ -73,7 +74,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                 text-gray-900
             "
             >
-              Profile
+              Profile ✍️
             </h2>
             <p className="md-1 text-sm leading-6 text-gray-600">
               Edit your profile.
@@ -88,7 +89,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
             >
               <Input
                 disabled={isLoading}
-                label="name"
+                label="Name"
                 id="name"
                 errors={errors}
                 required
@@ -97,21 +98,21 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
               <div>
                 <label
                   className="
-                block
-                text-sm
-                font-medium
-                leading-6
-                text-gray-900
+                    block
+                    text-sm
+                    font-medium
+                    leading-6
+                    text-gray-900
                 "
                 >
-                  Photo
+                  Photo 📷
                 </label>
                 <div
                   className="
-                mt-2
-                flex
-                items-center
-                gap-x-3
+                    mt-2
+                    flex
+                    items-center
+                    gap-x-3
                 "
                 >
                   <Image
@@ -127,7 +128,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                     uploadPreset="ltg9qudv"
                   >
                     <Button disabled={isLoading} secondary type="button">
-                      Change
+                      Change photo
                     </Button>
                   </CldUploadButton>
                 </div>
