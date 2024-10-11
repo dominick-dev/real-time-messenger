@@ -11,6 +11,7 @@ import toast from "react-hot-toast";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
+// define types of login variants
 type Variant = "LOGIN" | "REGISTER";
 
 const AuthForm = () => {
@@ -25,6 +26,7 @@ const AuthForm = () => {
     }
   }, [session?.status, router]);
 
+  // function to change the type of auth form variant
   const toggleVariant = useCallback(() => {
     if (variant === "LOGIN") {
       setVariant("REGISTER");
@@ -33,6 +35,7 @@ const AuthForm = () => {
     }
   }, [variant]);
 
+  // react hook form
   const {
     register,
     handleSubmit,
@@ -45,9 +48,11 @@ const AuthForm = () => {
     },
   });
 
+  // onSubmit function to handle sign in
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
+    // Axios call to register route
     if (variant === "REGISTER") {
       axios
         .post("/api/register", data)
@@ -56,6 +61,7 @@ const AuthForm = () => {
         .finally(() => setIsLoading(false));
     }
 
+    // NextAuth call to sign in
     if (variant === "LOGIN") {
       signIn("credentials", {
         ...data,
@@ -74,6 +80,7 @@ const AuthForm = () => {
     }
   };
 
+  // NextAuth call to sign in w/ social
   const socialAction = (action: string) => {
     setIsLoading(true);
 
@@ -102,12 +109,12 @@ const AuthForm = () => {
     >
       <div
         className="
-                bg-white
-                px-4
-                py-8
-                shadow
-                sm:rounded-lg
-                sm:px-10
+              bg-white
+              px-4
+              py-8
+              shadow
+              sm:rounded-lg
+              sm:px-10
             "
       >
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
@@ -146,10 +153,10 @@ const AuthForm = () => {
           <div className="relative">
             <div
               className="
-                        absolute
-                        inset-0
-                        flex
-                        items-center
+                      absolute
+                      inset-0
+                      flex
+                      items-center
                     "
             >
               <div className="w-full border-t border-gray-300" />
@@ -185,7 +192,7 @@ const AuthForm = () => {
         >
           <div>
             {variant === "LOGIN"
-              ? "New to Messenger?"
+              ? "First time here? →"
               : "Already have an account?"}
           </div>
           <div onClick={toggleVariant} className="underline cursor-pointer">
